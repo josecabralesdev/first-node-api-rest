@@ -1,10 +1,10 @@
 import express, { json } from 'express';
 import { moviesRouter } from './routes/movies.js';
-import { corsMiddleware } from './middlewares/cors.js';
+import cors from 'cors'
 
 const app = express()
 app.use(json())
-app.use(corsMiddleware())
+app.use(cors())
 app.disable('x-powered-by')
 
 app.use('/movies', moviesRouter)
